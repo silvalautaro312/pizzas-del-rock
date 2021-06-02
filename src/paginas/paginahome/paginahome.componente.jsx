@@ -5,7 +5,7 @@ import Directorio from '../../componentes/directorio/directorio.componente';
 import './paginahome.estilos.scss';
 
 const PaginaHome = () => (
-    <div className='paginaHome'>
+    <div className='pagina-home'>
         <Directorio />
     </div>
 );

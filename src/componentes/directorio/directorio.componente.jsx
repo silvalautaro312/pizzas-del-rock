@@ -13,19 +13,24 @@ class Directorio extends React.Component {
                 {
                     titulo: 'Nuestras Pizzas',
                     imagenUrl: 'https://i.ibb.co/JQGpzSC/pizzas.jpg',
-                    id: 1
-                },
-                {
-                    titulo: 'Nuestras Promos',
-                    imagenUrl: 'https://i.ibb.co/QKt436R/Inkednuestraspizzas-LI.jpg',
-                    id: 2
+                    id: 1,
+                    linkUrl: 'pizzas'
                 },
                 {
                     titulo: 'Mas opciones',
-                    imagenUrl: 'https://i.ibb.co/1vm4pYz/empanadas-y-cerveza-2.png',
-                    id: 3
+                    imagenUrl: 'https://i.ibb.co/6F65ZGc/empanadas-y-cerveza-2.png',
+                    id: 2,
+                    linkUrl: 'masopciones'
+                    
 
-                }]
+                },
+                {
+                    titulo: 'Nuestras Promos',
+                    imagenUrl: 'https://i.ibb.co/XkTdwqn/promocionesydescuentos.jpg',
+                    id: 3,
+                    linkUrl: 'promos'
+                }
+                ]
         };
     }
 
@@ -33,12 +38,12 @@ class Directorio extends React.Component {
         return (
             <div className='menu-directorio'>
                 {
-                    this.state.secciones.map( ({titulo, imagenUrl, id}) => (
-                        <MenuItem key={ id } titulo={ titulo } imagenUrl={ imagenUrl } />
+                    this.state.secciones.map(({id, ...otrasSeccionesProps}) => (
+                        <MenuItem key={id} {...otrasSeccionesProps} />
                 ))}            
             </div> 
         );        
-    }
+    };
 }
 
 export default Directorio;
